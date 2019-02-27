@@ -1,0 +1,14 @@
+
+Return top three most popular posts, by views:
+('Candidate is jerk, alleges rival', 338647)
+('Bears love berries, alleges bear', 253801)
+('Bad things gone, say good people', 170098)
+
+Return most popular authors, by views:
+('Ursula La Multa', 507594)
+('Rudolf von Treppenwitz', 423457)
+('Anonymous Contributor', 170098)
+('Markoff Chaney', 84557)
+
+Return days where error rate was higher than %1, show error %:
+('2016-07-17', Decimal('0.02262686246802725956'))

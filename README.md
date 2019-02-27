@@ -1,5 +1,5 @@
 # LOGS ANALYSIS
-To run: `pyhthon3 news-data.py` in your terminal
+To run: `pyhthon3 news-report.py` in your terminal
 
 ## Goal
 ### The goal of this analysis was to find the following:
@@ -85,7 +85,3 @@ there was an error status 404 as the numerator.
     ------------+------------------------
     2016-07-17 | 0.02262686246802725956
     (1 row)
-
-
-
-  
