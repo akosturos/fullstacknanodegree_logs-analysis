@@ -1,7 +1,8 @@
-#LOGS ANALYSIS
+# LOGS ANALYSIS
+To run: `pyhthon3 news-data.py` in your terminal
 
 ## Goal
-###The goal of this analysis was to find the following:
+### The goal of this analysis was to find the following:
 1. What are the most popular three articles of all time?
 2. Who are the most popular article authors of all time?
 3. On which days did more than 1% of requests lead to errors?
@@ -25,18 +26,18 @@ are correct urls, relating to correct articles.
  order by views desc;`
 
 
-####Result:
- title                              | views  
-------------------------------------+--------
-Candidate is jerk, alleges rival    | 338647
-Bears love berries, alleges bear    | 253801
-Bad things gone, say good people    | 170098
-Goats eat Google's lawn             |  84906
-Trouble for troubled troublemakers  |  84810
-Balloon goons doomed                |  84557
-There are a lot of bears            |  84504
-Media obsessed with bears           |  84383
-(8 rows)
+#### Result:
+     title                              | views  
+    ------------------------------------+--------
+    Candidate is jerk, alleges rival    | 338647
+    Bears love berries, alleges bear    | 253801
+    Bad things gone, say good people    | 170098
+    Goats eat Google's lawn             |  84906
+    Trouble for troubled troublemakers  |  84810
+    Balloon goons doomed                |  84557
+    There are a lot of bears            |  84504
+    Media obsessed with bears           |  84383
+    (8 rows)
 
 
 
@@ -54,6 +55,16 @@ can do this by grouping the count by the author name.
  group by authors.name
  order by views desc;`
 
+
+#### Result:
+    name          | views  
+    ------------------------+--------
+    Ursula La Multa        | 507594
+    Rudolf von Treppenwitz | 423457
+    Anonymous Contributor  | 170098
+    Markoff Chaney         |  84557
+    (4 rows)
+
 ### Objective 3 - Popular authors
 
 To get the days where the error rate is more than 1%, we will have to look at the log
@@ -68,3 +79,13 @@ there was an error status 404 as the numerator.
                             where status like '%404%' group by day)
                 as log_percentage group by day order by error_rate)
   as alias where error_rate >= .01000;`
+
+#### Result:
+    day     |       error_rate       
+    ------------+------------------------
+    2016-07-17 | 0.02262686246802725956
+    (1 row)
+
+
+
+  
